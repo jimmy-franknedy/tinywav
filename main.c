@@ -15,13 +15,35 @@
  */
 
 #include "tinywav.h"
-
 #include <assert.h>
+#include <string.h>
+#include <stdlib.h>
 
 #define NUM_CHANNELS 1
 #define SAMPLE_RATE 48000
 #define BLOCK_SIZE 512
+#define BUFSZ 256
 
+int fuzzme(char *buf)
+{
+  if(strlen(buf) >= 3)
+    if(buf[0] == 'b')
+      if(buf[1] == 'u')
+        if(buf[2] == 'g') {
+          printf("You've got it!");
+          abort();
+        }
+    return 0;
+}
+
+int LLVMFuzzerTestOneInput(char* data, size_t size)
+{
+  fuzzme(data);
+  return 0;
+}
+
+
+/*
 int main(int argc, char *argv[]) {
   char* outputPath = "output.wav";
   
@@ -57,3 +79,4 @@ int main(int argc, char *argv[]) {
 
   return 0;
 }
+*/
