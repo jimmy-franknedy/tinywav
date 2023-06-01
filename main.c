@@ -15,14 +15,15 @@
  */
 
 #include "tinywav.h"
-
 #include <assert.h>
+#include <string.h>
+#include <stdlib.h>
 
 #define NUM_CHANNELS 1
 #define SAMPLE_RATE 48000
 #define BLOCK_SIZE 512
+#define BUFSZ 256
 
-<<<<<<< HEAD
 int fuzzme(char *buf)
 {
   if(strlen(buf) >= 3)
@@ -35,17 +36,14 @@ int fuzzme(char *buf)
     return 0;
 }
 
-/*
 int LLVMFuzzerTestOneInput(char* data, size_t size)
 {
   fuzzme(data);
   return 0;
 }
-*/
+
 
 /*
-=======
->>>>>>> parent of 490de76 (Testing?)
 int main(int argc, char *argv[]) {
   char* outputPath = "output.wav";
   
@@ -81,3 +79,4 @@ int main(int argc, char *argv[]) {
 
   return 0;
 }
+*/
